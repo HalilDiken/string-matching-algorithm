@@ -81,22 +81,22 @@ if __name__ == "__main__":
         {
             "id": "BleakHouse",
             "file_name": "Bleak House.html",
-            "patterns": ["law", "Chancery", "Jarndyce and Jarndyce"]
+            "patterns": ["she", "Chancery", "Jarndyce and Jarndyce"]
         },
         {
             "id": "BitString1",
             "file_name": "bit_string1.html",
-            "patterns": ["10101", "00000"] 
+            "patterns": ["10101", "00000", "1111111111111111"] 
         },
         {
             "id": "BitString2",
             "file_name": "bit_string2.html",
-            "patterns": ["11111", "10001"] 
+            "patterns": ["11111", "10001", "0000000000000000"] 
         },
         {
             "id": "BitString3",
             "file_name": "bit_string3.html",
-            "patterns": ["01010", "11011"] 
+            "patterns": ["01010", "11011", "001001001"]
         }
     ]
 
