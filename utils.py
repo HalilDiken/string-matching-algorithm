@@ -25,7 +25,7 @@ def createMarkedHTML(text,matches,pattern_length,output_path):
             result.append("<mark>")
             in_mark = True
         
-        # İf not matched (False) but in_mark we have to mark return false,finish mark-mark
+        # If not matched (False) but in_mark we have to mark return false,finish mark-mark
         elif not is_marked[i] and in_mark:
             result.append("</mark>")
             in_mark = False
