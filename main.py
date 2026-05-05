@@ -59,7 +59,7 @@ if __name__ == "__main__":
     # ---------------------------------------------------------
     # PART 2: HTML -> Type 1&2 -> 1) Karamazov Brothers 
     #                             2) Crime and Punishment
-    #                             3) Turkey
+    #                             3) Bleak House
     #                             4) Bit String 1
     #                             5) Bit String 2
     #                             6) Bit String 3
@@ -71,17 +71,17 @@ if __name__ == "__main__":
         {
             "id": "CrimeAndPunishment",
             "file_name": "Crime and Punishment.html",
-            "patterns": ["Raskolnikov", "the", "murder"]
+            "patterns": ["Raskolnikov", "all", "murder"]
         },
         {
-            "id": "Karamazov",
+            "id": "TheBrothersKaramazov",
             "file_name": "The Brothers Karamazov.html", 
             "patterns": ["Karamazov", "the", "characteristics"]
         },
         {
-            "id": "Turkey",
-            "file_name": "Turkey.html",
-            "patterns": ["history", "culture", "the"]
+            "id": "BleakHouse",
+            "file_name": "Bleak House.html",
+            "patterns": ["law", "Chancery", "Jarndyce and Jarndyce"]
         },
         {
             "id": "BitString1",
