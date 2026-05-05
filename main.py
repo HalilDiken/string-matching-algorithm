@@ -1,19 +1,14 @@
 import time
-import os
-import urllib.request
 from utils import createMarkedHTML
-from algorithms import brute_force,horspool,boyer_moore
+from algorithms import brute_force,horspool,boyer_moore,bad_table,good_suffix_table
 
 # it is our template for print all conclusion for all algorithm
 def test_algorithm (algo_name,algo_func,text,pattern,output_filename):
-    
     print(f"---> {algo_name} <---")
-
     
     start_time = time.perf_counter()
 
     matches,comparisons =algo_func(text,pattern)
-
     
     end_time = time.perf_counter()
 
@@ -22,7 +17,7 @@ def test_algorithm (algo_name,algo_func,text,pattern,output_filename):
 
     createMarkedHTML(text,matches,len(pattern),output_filename)
 
-    print(f"pattern : '{pattern}'")
+    print(f"Pattern : '{pattern}'")
     print(f"Matches that found : {len(matches)}")
     print(f"Comparison times : {comparisons}")
     print(f"Run time : {run_time_ms:.4f}ms")
@@ -36,7 +31,7 @@ if __name__ == "__main__":
     # PART 1 : 4 Small Test Case for All algorithms
     # ---------------------------------------------------------
     test_cases = [
-        ("TC1", "<HTML><BODY>WHICH_FINALLY_HALTS. _ _ AT_THAT POINT </BODY></HTML>", "  "),
+        ("TC1", "<HTML><BODY>WHICH_FINALLY_HALTS. _ _ AT_THAT POINT </BODY></HTML>", "AT_THAT"),
         ("TC2", "<HTML><BODY>ABC_AT_THAT_XYZ_AT_THAT_END</BODY></HTML>", "AT_THAT"),
         ("TC3", "<HTML><BODY>AAAAAA</BODY></HTML>", "AAA"),
         ("TC4", "<HTML><BODY>THIS_IS_A_TEST</BODY></HTML>", "XYZ")
@@ -48,7 +43,7 @@ if __name__ == "__main__":
         ("Boyer-Moore", boyer_moore, "BM")
     ]
 
-    print("="*50 + "\n Small test case begin\n" + "="*50)
+    print("="*50 + "\n Small Test Case\n" + "="*50)
 
     for tc_name, text, pattern in test_cases:
         print(f"\n[{tc_name}] Test is running - Text: {text}")
@@ -112,7 +107,9 @@ if __name__ == "__main__":
 
         # Look all algorithms for each pattern
         for pattern in item["patterns"]:
-            print(f"\n>>> '{pattern}' SEARCHING IN {item['id']} <<<")
+            print(f">>> '{pattern}' SEARCHING IN {item['id']} <<<")
+            print(f"[{pattern}] - Bad Symbol Table : {bad_table(pattern)}")
+            print(f"[{pattern}] - Good Suffix Table : {good_suffix_table(pattern)}\n")
             for algo_name, algo_func, short_name in algorithms:
                 output_name = f"{item['id']}_{pattern}_{short_name}.html"
                 test_algorithm(algo_name, algo_func, html_text, pattern, output_name)

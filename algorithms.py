@@ -141,9 +141,6 @@ def boyer_moore(text,pattern):
     #Create table
     bad_symbol_table = bad_table(pattern)
     good_symbol_table = good_suffix_table(pattern)
-
-    print(f"\n[{pattern}] - Bad Symbol Table : {bad_symbol_table}")
-    print(f"\n[{pattern}] - Good Suffix Table : {good_symbol_table}")
     
     # pattern will be alignment according to start index s
     s = 0
